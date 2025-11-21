@@ -29,7 +29,7 @@ model = genai.GenerativeModel('gemini-2.5-flash')
 # Handler for the /start command
 async def start(update: Update, context: CallbackContext) -> None:
     """Send a message when the command /start is issued."""
-    await update.message.reply_text('Hello! I am an LLM-based chatbot using Google Gemini. Ask me anything.')
+    await update.message.reply_text('Hello! I am an LLM-based text chatbot finetuned on diagnostic and repair manuals, and can find spare parts by VIN, OEM part number and/or aftermarket part number for cars, commercial vehicles, construction equipment and agricultural equipment . Ask me anything.')
 
 # Handler for text messages (non-commands)
 async def handle_message(update: Update, context: CallbackContext) -> None:
