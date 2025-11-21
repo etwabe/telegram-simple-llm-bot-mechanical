@@ -1,4 +1,5 @@
 import logging
+import uvicorn
 import os
 from dotenv import load_dotenv
 from telegram import Update
@@ -50,5 +51,8 @@ def main() -> None:
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     application.run_polling()
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000)) # Default to 8000 if PORT is not set
+    uvicorn.run(main, host="0.0.0.0", port=port)
