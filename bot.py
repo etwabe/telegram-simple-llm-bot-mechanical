@@ -22,8 +22,8 @@ ALLOWED_USER_IDS = [int(uid.strip()) for uid in allowed_ids_str.split(',') if ui
 # Configure Gemini API
 genai.configure(api_key=GEMINI_API_KEY)
 
-# Initialize the Gemini model (using 'gemini-1.5-flash' for free tier; adjust if needed)
-model = genai.GenerativeModel('gemini-1.5-flash')
+# Initialize the Gemini model (using 'gemini-2.5-flash' for free tier; adjust if needed)
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 # Handler for the /start command
 async def start(update: Update, context: CallbackContext) -> None:
